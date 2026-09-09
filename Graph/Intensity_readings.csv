@@ -1,0 +1,7 @@
+,Enzyme,Intensity.a,Specific_growth_rate.a,Intensity.ratio.a,Intensity.b,Specific_growth_rate.b,Intensity.ratio.b,Intensity.c,Specific_growth_rate.c,Intensity.ratio.c,Intensity.d,Specific_growth_rate.d,Intensity.ratio.d,Intensity.e,Specific_growth_rate.e,Intensity.ratio.e,Intensity.f,Specific_growth_rate.f,Intensity.ratio.f
+1,aceA (isocitrate lyase),56.3,0.6,0.2,135,0.5,0.5,237.6,0.4,0.9,255,0.3,1,255,0.2,1,254.9,0.1,1
+7,acs (acetyl-CoA synthetase),100.7,0.6,0.4,143.7,0.5,0.6,213,0.4,0.8,230.2,0.3,0.9,166.9,0.2,0.7,107.4,0.1,0.4
+13,ackA (acetate kinase),251.8,0.6,1,125.2,0.5,0.5,67.4,0.4,0.3,52.2,0.3,0.2,36.3,0.2,0.1,110.2,0.1,0.4
+19,pta (phosphotransacetylase),176.2,0.6,0.7,112.3,0.5,0.4,79.2,0.4,0.3,56.1,0.3,0.2,54.8,0.2,0.2,73.5,0.1,0.3
+25,pckA (pyruvate carboxykinase),255,0.6,1,255,0.5,1,255,0.4,1,255,0.3,1,255,0.2,1,255,0.1,1
+31,aceE (pyruvate dehydrogenase),255,0.6,1,253.7,0.5,1,253.9,0.4,1,223.9,0.3,0.9,166.2,0.2,0.7,87.3,0.1,0.3

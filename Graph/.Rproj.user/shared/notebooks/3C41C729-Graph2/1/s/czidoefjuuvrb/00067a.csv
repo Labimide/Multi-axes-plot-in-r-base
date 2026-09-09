@@ -1,0 +1,2 @@
+"0",""
+"0","plot(Biomass, Pyruvate, ylab = """", xlab = """", col= ""black"", main = """", xlim = c(0, 250), ylim = c(0, 10), pch = 15, lwd = 2, cex = 2, axes = F)"

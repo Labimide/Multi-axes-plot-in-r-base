@@ -1,0 +1,4 @@
+"0",""
+"0","#Legend"
+"0","legend(""topleft"", inset = 0.05, legend = c(""Biomass dry weight"", ""AcCoA-S activities""), lty = 1, pch = c(1, 16))"
+"0",""

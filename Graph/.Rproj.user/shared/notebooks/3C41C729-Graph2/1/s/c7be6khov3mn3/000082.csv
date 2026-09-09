@@ -1,0 +1,6 @@
+"0",""
+"0","#points(Time, Dry_weight, pch = 1, col = 1, cex = 1.5)"
+"0",""
+"0","#axis(2, col = ""black"", lwd = 1, ylim = c(20, 400))"
+"0",""
+"0","mtext(2, text = ""Biomass dry weight (μg/ml)"", line = 2.6)"

@@ -1,0 +1,2 @@
+"0",""
+"0","axis(2, col = ""black"", lwd = 2, line = 4.3, at = seq(0, 160, by = 40), las = 1, cex.axis = 1.2)"

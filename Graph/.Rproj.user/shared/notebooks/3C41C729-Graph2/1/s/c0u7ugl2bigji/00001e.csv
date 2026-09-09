@@ -1,0 +1,4 @@
+"0",""
+"0","dat <- dat1 %>% filter(Enzyme == ""aceE (pyruvate dehydrogenase)"") %>% select(Specific_growth_rate, Intensity.ratio)"
+"0",""
+"0","plot(dat$Specific_growth_rate, dat$Intensity.ratio, axes = F, ylab = """", xlab = """", type = ""o"", col= ""black"", main = """", ylim = c(0, 1.0), xlim = c(0, 0.8), pch = 15, cex = 1.2, lwd = 2, lty = 6)"

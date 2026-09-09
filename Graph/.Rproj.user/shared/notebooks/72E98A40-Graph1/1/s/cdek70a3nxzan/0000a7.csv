@@ -1,0 +1,4 @@
+"0",""
+"0","#points(Time, Dry_weight, pch = 1, col = 1, cex = 1.5)"
+"0",""
+"0","axis(1,at = seq(0, 9, by=1), cex.axis = 1.5)"

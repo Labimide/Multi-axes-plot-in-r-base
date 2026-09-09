@@ -1,0 +1,2 @@
+"0",""
+"0","axis(2, ylim = c(0, 10), line = 5.0, lwd = 2, cex.axis = 1.4, las = 1)"

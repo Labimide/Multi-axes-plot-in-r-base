@@ -1,0 +1,2 @@
+"0",""
+"0","plot(dat$Specific_growth_rate_.Î.., dat$acetate_excretion_.Î.mol.ml., axes = F, ylab = """", type = ""l"", lty = 3, col=""blue"", main = """", ylim = c(0, 8), xlim = c(0, 0.8))"

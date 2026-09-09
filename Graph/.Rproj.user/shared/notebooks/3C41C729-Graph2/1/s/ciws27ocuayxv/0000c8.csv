@@ -1,0 +1,7 @@
+"0","Pyruvate <- c(3, 7.5, 0, 1.8, 3.6, 4.4, 5.1, 5.8, 6.2, 6.9, 7.1)"
+"0","Biomass <- c(120, 12, 204, 153, 108, 84, 72, 54, 42, 24, 18)"
+"0","Acetate <- rep(0, 11)"
+"0",""
+"0","par(mar = c(5, 5, 4, 4))"
+"0",""
+"0","plot(Biomass, Pyruvate, ylab = """", xlab = ""Biomass dry weight (μg/ml)"", col= ""black"", main = """", xlim = c(0, 240), ylim = c(0, 10), pch = 15, las = 1, lwd = 2, cex = 2, cex.lab = 1.5, cex.axis = 1.5)"

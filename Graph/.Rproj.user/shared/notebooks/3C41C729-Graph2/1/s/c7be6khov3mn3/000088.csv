@@ -1,0 +1,4 @@
+"0",""
+"0","#points(Time2, AcCoA_s,pch = 16, col =1, ylim = c(0, 80), cex = 1.5)"
+"0",""
+"0","axis(4, col = ""black"", lwd = 1, las = 1)#, at = seq(0, 60, by = 2), las = 1)"

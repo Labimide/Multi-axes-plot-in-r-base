@@ -1,0 +1,159 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r, fig.width=7, fig.height=7}
+dat <- read.table("data.txt", header = T)
+
+par(mar = c(5, 8, 4, 8) + 0.1)
+
+plot(dat$Specific_growth_rate_.Î.., dat$ICDH_Specific_activities, axes = F, ylab = "", xlab = "", type = "l", col= 1, main = "", ylim = c(0, 0.8), xlim = c(0, 0.8))
+
+points(dat$Specific_growth_rate_.Î.., dat$ICDH_Specific_activities,pch = 1, col = 1, cex = 1.5)
+
+axis(2, col = "black", lwd = 1, las = 1)
+
+mtext(2, text = "ICDH activities (Units/ml)", line = 2.3)
+
+
+#Plot second y axis
+par(new = T)
+
+plot(dat$Specific_growth_rate_.Î.., dat$ICL_Specific_activities, axes = F, ylab = "", xlab = "", type = "l", lty = 1, col=1, main = "", ylim = c(0, 160), lwd = 1, xlim = c(0, 0.8))
+
+points(dat$Specific_growth_rate_.Î.., dat$ICL_Specific_activities,pch = 17, col =1, ylim = c(0, 160), cex = 1.5)
+
+axis(2, col = "black", lwd = 1, line = 3.5, at = seq(0, 160, by = 40), las = 1)
+
+mtext(2, text = "ICL activities (Units/ml)", line = 6)
+
+#Plot third y axis
+par(new = T)
+
+plot(dat$Specific_growth_rate_.Î.., dat$acetate_excretion_.Î.mol.ml., axes = F, ylab = "", xlab = "", type = "l", lty = 1, col=1, main = "", ylim = c(0, 8), lwd = 1, xlim = c(0, 0.8))
+
+points(dat$Specific_growth_rate_.Î.., dat$acetate_excretion_.Î.mol.ml.,pch = 15, col =1, ylim = c(0, 8), cex = 1.5)
+
+axis(4, col = "black", lwd = 1, at = seq(0, 8, by = 2), las = 1)
+
+mtext(4, text = "Acetate excretion (μmol/ml))", line = 2)
+
+#Plot fourth y axis
+par(new = T)
+
+plot(dat$Specific_growth_rate_.Î.., dat$AcCo.S, axes = F, ylab = "", xlab = "", type = "l", lty = 1, col=1, main = "", ylim = c(0, 80), lwd = 1, xlim = c(0, 0.8))
+
+points(dat$Specific_growth_rate_.Î.., dat$AcCo.S,pch = 2, col =1, ylim = c(0, 80), cex = 1.5)
+
+axis(4, col = "black", lwd = 1, line = 3.5, at = seq(0, 80, by = 20), las = 1)
+
+mtext(4, text = "AcCoA-S activities (Units/ml)", line = 6)
+
+#inserting x-axis
+axis(1, at = seq(0, 0.8, by = 0.2))
+mtext(1, text = "Specific growth rate (μ)", line = 2)
+
+#Legend
+legend("topleft", inset = 0.05, legend = c("ICDH activities", "ICL activities" , "AcCoA-S activities", "Acetate excretion"), lty = 1, pch = c(1, 17, 2, 15))
+
+
+
+```
+```{r, fig.width=7, fig.height=7}
+Time <- c(0, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9)
+
+#Dry_weight <- (c(22.5, 43, 60, 80, 110, 140, 190, 195, 196, 197, 198, 197, 198, 225, 275, 280, 300, 340)
+                   
+Dry_weight <- 2 ^(c(4.5, 5.5, 5.9, 6.3, 6.9, 7.2, 7.4, 7.5, 7.55, 7.6, 7.6, 7.6, 7.6, 7.7, 7.9, 8.0, 8.2, 8.3))
+
+AcCoA_s <- c(0, 0, 0, 0, 4.8, 21.8, 30.1, 39.8, 50.1, 59.6)
+
+Time2 <- c(0:9)
+
+Time3 <- c(Time[1], Time[7], Time[13], Time[18])
+Dry_weight2 <- c(Dry_weight[1], Dry_weight[7], Dry_weight[13], Dry_weight[18])
+
+par(mar = c(5, 4, 4, 4) + 0.1)
+
+plot(Time, Dry_weight, log = "y", axes = T, ylab = "", xlab = "", col= 1, main = "", xlim = c(0, 9), type = "b", cex = 1.5, ylim = c(20, 400), las = 1)
+
+#points(Time, Dry_weight, pch = 1, col = 1, cex = 1.5)
+
+#axis(2, col = "black", lwd = 1, ylim = c(20, 400))
+
+mtext(2, text = "Biomass dry weight (μg/ml)", line = 2.6)
+
+#Plot second y axis
+par(new = T)
+
+plot(Time2, AcCoA_s, axes = F, ylab = "", xlab = "", type = "b", lty = 1, col=1, main = "", ylim = c(0, 80), lwd = 1, xlim = c(0, 9), pch = 16, cex = 1.5)
+
+#points(Time2, AcCoA_s,pch = 16, col =1, ylim = c(0, 80), cex = 1.5)
+
+axis(4, col = "black", lwd = 1, las = 1)#, at = seq(0, 60, by = 2), las = 1)
+
+mtext(4, text = "AcCoA-S (Units/ml)", line = 2)
+
+#inserting x-axis
+axis(1, at=seq(0, 9, by = 1))
+mtext(1, text = "Time (h)", line = 2)
+
+#Legend
+legend("topleft", inset = 0.05, legend = c("Biomass dry weight", "AcCoA-S activities"), lty = 1, pch = c(1, 16))
+
+```
+
+```{r, fig.width=7, fig.height=7}
+Pyruvate <- c(3, 7.5, 0, 1.8, 3.6, 4.4, 5.1, 5.8, 6.2, 6.9, 7.1)
+Biomass <- c(120, 12, 204, 153, 108, 84, 72, 54, 42, 24, 18)
+Acetate <- rep(0, 11)
+
+par(mar = c(5, 5, 4, 4))
+
+plot(Biomass, Pyruvate, ylab = "", xlab = "Biomass dry weight (μg/ml)", col= "black", main = "", xlim = c(0, 240), ylim = c(0, 10), pch = 15, las = 1, lwd = 2, cex = 2, cex.lab = 1.5, cex.axis = 1.5)
+
+mtext(2, text = "Pyruvate, acetate (μmol/ml)", line = 2.5, cex = 1.5)
+
+#abline(lm(Pyruvate~Biomass))
+
+fit_Py <- lm(Pyruvate~Biomass)
+Pred_Py <- predict(fit_Py, newdata = data.frame(Biomass = Biomass))
+
+lines(Biomass, Pred_Py, xlim = c(0, 240), ylim = c(0, 10), lwd =2)
+
+points(Biomass, Acetate, ylab = "Pyruvate, acetate (μmol/ml)", xlab = "Biomass dry weight (μg/ml)", col= "black", main = "", xlim = c(0, 240), cex = 2, ylim = c(0, 10), pch = 22, type = "o", lwd = 2)
+
+#abline(lm(Acetate~Biomass))
+
+#Legend
+legend("topright", inset = 0.05, legend = c("Pyruvate", "Acetate"), lty = 1, pch = c(15, 22), lwd =2, cex = 1.5)
+
+
+```
+
+```{r, fig.width=7, fig.height=7}
+Time <- c(0, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9)
+
+#Dry_weight <- (c(22.5, 43, 60, 80, 110, 140, 190, 195, 196, 197, 198, 197, 198, 225, 275, 280, 300, 340)
+                   
+Dry_weight <- 2 ^(c(4.5, 5.5, 5.9, 6.3, 6.9, 7.2, 7.4, 7.5, 7.55, 7.6, 7.6, 7.6, 7.6, 7.7, 7.9, 8.0, 8.2, 8.3))
+
+AcCoA_s <- c(0, 0, 0, 0, 4.8, 21.8, 30.1, 39.8, 50.1, 59.6)
+
+Time2 <- c(0:9)
+
+Time3 <- c(Time[1], Time[7], Time[13], Time[18])
+Dry_weight2 <- c(Dry_weight[1], Dry_weight[7], Dry_weight[13], Dry_weight[18])
+
+par(mar = c(5,5, 4, 4))
+
+plot(Time, Dry_weight, log = "y", ylab = "", xlab = "Time (h)", col= "black", main = "", xlim = c(0, 9), type = "b", ylim = c(20, 400), xaxt = "n", las = 1, cex = 2, cex.axis = 1.5, cex.lab = 1.5, lwd = 2)
+
+mtext(2, text = "Biomass dry weight (μg/ml)", line = 3.5, cex = 1.5)
+
+#points(Time, Dry_weight, pch = 1, col = 1, cex = 1.5)
+
+axis(1,at = seq(0, 9, by=1), cex.axis = 1.5)
+```
+

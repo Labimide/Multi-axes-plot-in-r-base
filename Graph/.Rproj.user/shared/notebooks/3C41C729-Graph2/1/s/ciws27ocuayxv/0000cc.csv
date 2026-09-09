@@ -1,0 +1,7 @@
+"0",""
+"0","#abline(lm(Pyruvate~Biomass))"
+"0",""
+"0","fit_Py <- lm(Pyruvate~Biomass)"
+"0","Pred_Py <- predict(fit_Py, newdata = data.frame(Biomass = Biomass))"
+"0",""
+"0","lines(Biomass, Pred_Py, xlim = c(0, 240), ylim = c(0, 10), lwd =2)"

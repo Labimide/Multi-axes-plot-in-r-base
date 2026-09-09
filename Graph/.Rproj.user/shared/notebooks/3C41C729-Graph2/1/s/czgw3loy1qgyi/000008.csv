@@ -1,0 +1,6 @@
+"0","dat <- read.csv(""Intensity readings 2.csv"")"
+"0",""
+"0","dat1 <- reshape(dat, idvar = ""Enzyme"", timevar = ""Specific.growth.rate"", direction = ""wide"")"
+"0",""
+"0","write.csv(dat1, file = ""Intensity_readings.csv"", quote = F)"
+"0",""

@@ -1,0 +1,2 @@
+"0",""
+"0","plot(Time2, AcCoA_s, axes = F, ylab = """", xlab = """", type = ""b"", lty = 1, col= ""black"", main = """", ylim = c(0, 80), lwd = 2, xlim = c(0, 9), pch = 16, cex = 2)"

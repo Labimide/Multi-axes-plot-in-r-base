@@ -1,0 +1,2 @@
+"0",""
+"0","plot(dat$Specific_growth_rate_.Î.., dat$ICL_Specific_activities, axes = F, ylab = """", xlab = """", type = ""o"", lty = 1, col=""black"", main = """", ylim = c(0, 160), lwd = 2, xlim = c(0, 0.8), pch = 17, cex = 2)"

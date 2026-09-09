@@ -1,0 +1,2 @@
+"0",""
+"0","points(Biomass, Acetate, col= ""black"", main = """", xlim = c(0, 250), cex = 2, ylim = c(0, 10), pch = 22, type = ""o"", lwd = 2)"

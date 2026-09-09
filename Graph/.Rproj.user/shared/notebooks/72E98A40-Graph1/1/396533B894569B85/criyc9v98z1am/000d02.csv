@@ -1,0 +1,5 @@
+"0","dat <- read.table(""data.txt"", header = T)"
+"0",""
+"0","par(mar = c(5, 8, 4, 8) + 0.1)"
+"0",""
+"0","plot(dat$Specific_growth_rate_.Î.., dat$ICDH_Specific_activities, axes = F, ylab = """", xlab = """", type = ""l"", col= 1, main = """", ylim = c(0, 0.8), xlim = c(0, 0.8))"

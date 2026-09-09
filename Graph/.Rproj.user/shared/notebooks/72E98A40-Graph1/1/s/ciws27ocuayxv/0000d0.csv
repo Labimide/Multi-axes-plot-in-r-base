@@ -1,0 +1,5 @@
+"0",""
+"0","#abline(lm(Acetate~Biomass))"
+"0",""
+"0","#Legend"
+"0","legend(""topright"", inset = 0.05, legend = c(""Pyruvate"", ""Acetate""), lty = 1, pch = c(15, 22), lwd =2, cex = 1.5)"
