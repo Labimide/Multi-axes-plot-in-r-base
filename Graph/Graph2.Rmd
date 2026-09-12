@@ -9,7 +9,7 @@ library(dplyr)
 
 
 ```{r, fig.width=7, fig.height=7}
-dat <- read.table("data.txt", header = T)
+dat <- read.table("raw_data/data.txt", header = T)
 
 par(mar = c(5, 8, 0.5, 8) + 0.1)
 
@@ -54,11 +54,12 @@ mtext(1, text = "Specific growth rate (μ)", line = 2, cex = 1.2)
 #Legend
 legend("topleft", inset = 0.05, legend = c("ICDH activity", "ICL activity" , "AcCoA-S activity", "Acetate excretion"), lty = 1, pch = c(1, 17, 2, 15), cex = 1.1, pt.cex = 1.5)
 
-
-
 ```
+
+
 ```{r, fig.width=7, fig.height=7}
-dat <- read.csv("data_new.csv")
+#Plotting Figure 1c
+dat <- read.csv("raw_data/data_new.csv")
 
 dat <- filter(dat, Substrate == "Pyruvate")
 
@@ -78,29 +79,74 @@ mtext(1, text = "Specific growth rate (μ)", line = 2, cex = 1.2)
 #Plot second y axis
 par(new = T)
 
-dat <- read.csv("data_new.csv")
+dat <- read.csv("raw_data/data_new.csv")
 
 dat <- filter(dat, Substrate == "Glycerol")
 
-plot(dat$Specific.growth.rate.h.1,  dat$AcCoA.S.specific.activity , axes = F, ylab = "", xlab = "", type = "o", col= "black", main = "", ylim = c(0, 35), xlim = c(0, 0.8), pch = 15, cex = 2, lwd = 2, las = 1)
+plot(dat$Specific.growth.rate.h.1,  dat$AcCoA.S.specific.activity , axes = F, ylab = "", xlab = "", type = "o", col= "black", main = "", ylim = c(0, 35), xlim = c(0, 0.8), pch = 0, cex = 2, lwd = 2, las = 1)
 
 
 #Plot third y axis
 
 par(new = T)
 
-dat <- read.csv("data_new.csv")
+dat <- read.csv("raw_data/data_new.csv")
 
 dat <- filter(dat, Substrate == "Acetate")
 
 plot(dat$Specific.growth.rate.h.1,  dat$AcCoA.S.specific.activity , axes = F, ylab = "", xlab = "", type = "o", col= "black", main = "", ylim = c(0, 35), xlim = c(0, 0.8), pch = 17, cex = 2, lwd = 2, las = 1)
 
 #Legend
-legend("topright", inset = 0.05, legend = c("Pyruvate", "Glycerol" , "Acetate"), lty = 1, pch = c(16, 15, 17), cex = 1.1, pt.cex = 1.5)
+legend("topright", inset = 0.05, legend = c("Pyruvate", "Glycerol" , "Acetate"), lty = 1, pch = c(16, 0, 17), cex = 1.1, pt.cex = 1.5, lwd = 2)
+
+```
+
+```{r, fig.width=7, fig.height=7}
+#Functionalising Figure 1C
+
+dat <- read.csv("raw_data/data_new.csv")
+
+par(mar = c(5.1, 4.1, 4.1, 2.1))
+
+plot_fun <- function (substrate, pch) {
+
+dat = filter(dat, Substrate == substrate)
+
+plot(dat$Specific.growth.rate.h.1,  dat$AcCoA.S.specific.activity , axes = F, ylab = "", xlab = "", type = "o", col= "black", main = "", ylim = c(0, 35), xlim = c(0, 0.8), pch = pch, cex = 2, lwd = 2, las = 1)
+
+}
+
+plot_fun("Pyruvate", 16)
+
+axis(2, col = "black", lwd = 2, las = 1, cex.axis = 1.2)
+
+mtext(2, text = "AcCoA-S specific activity (units/ml)", line = 2.6, cex = 1.2)
+
+#inserting x-axis
+axis(1, at = seq(0, 0.8, by = 0.2), cex.axis = 1.2, lwd =2)
+mtext(1, text = "Specific growth rate (μ)", line = 2, cex = 1.2)
+
+
+#Plot second y axis
+par(new = T)
+
+plot_fun("Glycerol", 0)
+
+
+#Plot third y axis
+
+par(new = T)
+
+plot_fun("Acetate", 17)
+
+#Legend
+legend("topright", inset = 0.05, legend = c("Pyruvate", "Glycerol" , "Acetate"), lty = 1, pch = c(16, 0, 17), cex = 1.1, pt.cex = 1.5, lwd = 2)
 
 
 
 ```
+
+
 
 ```{r, fig.width=7, fig.height=7}
 Time <- c(0, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9)
