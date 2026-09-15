@@ -33,6 +33,24 @@ text( x = dat$Specific.growth.rate, y = dat$Intensity, labels = dat$Label, pos =
 
 }
 
+#plot_fun_3 added loess smoothing to plot_fun_2
+plot_fun_3 <- function (substrate, pch, dat) {
+
+dat = filter(dat, Substrate == substrate)
+plot(Intensity ~ Specific.growth.rate, data = dat, axes = F, ylab = "", xlab = "", col= "black", main = "", ylim = c(0, 1), xlim = c(0, 0.8), pch = pch, cex = 2, las = 1)
+
+loess_fit = loess(Intensity ~ Specific.growth.rate, data = dat, span = 1.75)
+
+xseq = seq(min(dat$Specific.growth.rate), max(dat$Specific.growth.rate), length.out = 200)
+
+yseq = predict(loess_fit, newdata = data.frame(Specific.growth.rate = xseq))
+
+lines(xseq, yseq, lwd = 2)
+
+text( x = dat$Specific.growth.rate, y = dat$Intensity, labels = dat$Label, pos = 4, cex = 1.3)
+
+}
+
 ```
 
 
@@ -71,6 +89,8 @@ legend("topright", inset = 0.05, legend = c("Pyruvate", "Glycerol" , "Acetate"),
 
 ```{r, fig.width=7, fig.height=7}
 #Plot figure 1b
+
+plot_fun_2 <- plot_fun_3
 par(mar = c(5.1, 6.1, 4.1, 4.1))
 
 plot_fun_2("Pyruvate", 16, dat2)
@@ -96,7 +116,7 @@ par(new = T)
 plot_fun_2("Acetate", 17, dat2)
 
 #Legend
-legend("topright", inset = 0.05, legend = c(expression(italic("aceA") ~ ", Pyruvate"), expression(italic("aceA") ~  ", Glycerol") , expression(italic("aceA") ~  ", Acetate")), lty = 1, pch = c(16, 15, 17), cex = 1.1, pt.cex = 1.5, lwd = 2)
+legend("topleft", inset = 0.05, legend = c(expression(italic("aceA") ~ ", Pyruvate"), expression(italic("aceA") ~  ", Glycerol") , expression(italic("aceA") ~  ", Acetate")), lty = 1, pch = c(16, 15, 17), cex = 1.1, pt.cex = 1.5, lwd = 2)
 
 ```
 
